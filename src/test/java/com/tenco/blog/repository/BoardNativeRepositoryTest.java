@@ -25,6 +25,20 @@ public class BoardNativeRepositoryTest {
 //    }
 
     @Test
+    public void deleteById_test(){
+        // given
+        Long id =4L;
+
+        // when
+        br.deleteById(id);
+
+        // then
+        List<Board> boardList = br.findAll();
+        Assertions.assertThat(boardList.size()).isEqualTo(3);
+    }
+
+
+    @Test
     public void findById_test(){
         // given
         Long id = 1L;
